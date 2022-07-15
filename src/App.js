@@ -23,7 +23,11 @@ const App = () => {
 
   return(
     <div className='App'>
+      <div class="top-bar">
       <h1>Expense Tracker</h1>
+      <p> v2</p>
+      </div>
+
       <Balance allItems={transaction}/>
       <List allItems={transaction}
             listTitle="History"
