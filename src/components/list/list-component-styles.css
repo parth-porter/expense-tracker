@@ -6,10 +6,36 @@
     background-color: #E97451;
 }
 
-.list-component{
-    /* background-color: dimgray; */
-    overflow-y: auto;
+@media screen and (max-width: 500px){
+    .list-component{
+        /* background-color: dimgray; */
+        /* grid-area: listComponent; */
+        padding-left: 10px;
+        background-color: #eeeeee;
+
+    }
+
+    .list-parent{
+        overflow-y: scroll;
+        -webkit-overflow-scrolling: touch;
+        height: 200px;
+    }
 }
+
+@media screen and (min-width: 501px){
+
+    .list-component{
+        /* background-color: dimgray; */
+        /* grid-area: listComponent; */
+        padding-left: 5px;
+        overflow-y: scroll;
+        background-color: #eeeeee;
+        
+    }
+
+}
+
+
 
 
 .list-item{
