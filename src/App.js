@@ -9,14 +9,16 @@ const App = () => {
   const [transaction, setTransaction] = useState(
       localStorage.getItem('transactions-local') ? JSON.parse(localStorage.getItem('transactions-local')) : []
   )
-  const [numberOfTransactions, setNumberOfTransactions] = useState(0);
-  console.log("Current State: ", transaction)
+  const [numberOfTransactions, setNumberOfTransactions] = useState(
+    localStorage.getItem('number-of-transactions-local') ? JSON.parse(localStorage.getItem('number-of-transactions-local')) : 0
+  );
 
 
   useEffect(() => {
       localStorage.setItem('transactions-local', JSON.stringify(transaction))
+      localStorage.setItem('number-of-transactions-local', JSON.stringify(numberOfTransactions))
       console.log("Added to local")
-    }, [transaction])
+    }, [numberOfTransactions, transaction])
 
 
   const addTransaction = (description, amountInput) => {
@@ -29,17 +31,22 @@ const App = () => {
     setNumberOfTransactions(numberOfTransactions + 1);
   }
 
+  const afterRemoval = (newObj) => {
+    setTransaction(newObj)
+  }
+
 
   return (
     <div className='App'>
-      <div class="top-bar">
+      <div className="top-bar">
         <h1>Expense Tracker</h1>
       </div>
       <div className='all-content'>
-        <Balance allItems={transaction} />
+        <Balance allItems={transaction}/>
 
         <List allItems={transaction}
           listTitle="History"
+          itemHandler={afterRemoval}
         />
 
         <Form onSubmitHandler={addTransaction}
