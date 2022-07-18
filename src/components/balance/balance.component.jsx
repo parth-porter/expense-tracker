@@ -1,3 +1,5 @@
+import './balance-component-styles.css'
+
 const Balance = (props) => {
 
     const {allItems} = props;
@@ -29,11 +31,28 @@ const Balance = (props) => {
 
     return(
         <div className="balance-component">
-            <ul>
-                <li>{`Balance: $${totalBalance}`}</li>
-                <li>{`Income: $${totalIncome}`}</li>
-                <li>{`Expenses: $${totalExpenses}`}</li>
-            </ul>
+            <div className="balance-total">
+                <div className='balance-total-content'>
+                <p>YOUR BALANCE</p>
+                <h1 id="balance-amount-display">{`$${totalBalance}`}</h1>
+
+                </div>
+                
+            </div>
+            <div className="balance-combined">
+                <div className='balance-combined-inner-white'>
+                <div className="balance-combined-income">
+                    <p>INCOME</p>
+                    <p className='income-amount'>{`$${totalIncome}`}</p>
+                </div>
+                <div className="balance-combined-expenses">
+                    <p>EXPENSES</p>
+                    <p className='expense-amount'>{`$${totalExpenses}`}</p>
+                </div>
+
+                </div>
+                
+            </div>
         </div>
     )
 }

@@ -46,6 +46,7 @@ const Form = (props) => {
                             placeholder={placeholder1}
                             value={formInputs.input1}
                             onChange={onInput1Change}
+                            required
                     />
                     <br/>
                     
@@ -57,6 +58,7 @@ const Form = (props) => {
                             value={formInputs.input2} 
                             onChange={onInput2Change}
                             step={input2step}
+                            required
                     />
                     <br />
                     

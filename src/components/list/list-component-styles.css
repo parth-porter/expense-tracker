@@ -5,3 +5,38 @@
 .list-item-negative{
     background-color: #E97451;
 }
+
+.list-component{
+    /* background-color: dimgray; */
+    overflow-y: auto;
+}
+
+
+.list-item{
+    padding: 0 0 0 10px;
+    margin-bottom: 10px;
+    width: 95%;
+    box-shadow: 0 3px 5px rgb(0 0 0 / 0.2);
+    background-color: white;
+}
+
+.list-item-text{
+    display: flex;
+}   
+
+.list-item-description{
+    width: 83%;
+}
+
+.list-item-amount{
+    width: 15%;
+    text-align: right;
+    padding-right: 5px;
+}
+
+.list-item-end-strip{
+    width: 2%;
+    padding: 5px;
+    display: inline;
+
+}

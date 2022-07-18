@@ -6,14 +6,25 @@ const List = (props) => {
 
     return(
         <div className="list-component">
-            <h3>{listTitle}</h3>
+            <h3 className='list-title'>{listTitle}</h3>
             <hr />
-            <ul>
+            <div className='list-parent'>
                 {allItems.map( (item) => {
                     const colorClass = (item.isPositive ? "list-item-positive" : "list-item-negative" )
-                    return <li key={item.id} className={`list-item ${colorClass}`}>{`${item.description} ${item.amount} ${item.isPositive}`}</li>
+                    return <div key={item.id} className={'list-item'}>
+                        <div className='list-item-text'>
+                        <p className='list-item-description'>{`${item.description}`}</p>
+                        <p className='list-item-amount'>{`${item.amount}`}</p>
+                        <div className={`list-item-end-strip ${colorClass}`}>
+                            
+                        </div>
+                        </div>
+                        
+                    
+                    
+                    </div>
                 })}
-            </ul>
+            </div>
         </div>
 
 
