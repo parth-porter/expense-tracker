@@ -53,13 +53,8 @@ const App = () => {
           formTitle="Add New Transaction"
           label1text="Description"
           placeholder1="Describe the Transaction"
-          input1class="form-input-description"
-          input1type="text"
           label2text="Amount"
           placeholder2="+ for Income, - for Expense"
-          input2class="form-input-amount"
-          input2type="number"
-          input2step="0.01"
           buttonText="Add Transaction"
         />
 

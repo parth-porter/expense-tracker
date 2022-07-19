@@ -6,8 +6,8 @@ const Form = (props) => {
 
     const {onSubmitHandler,
             formTitle,
-            label1text, placeholder1, input1type, input1class,
-            label2text, placeholder2, input2type, input2class, input2step,
+            label1text, placeholder1,
+            label2text, placeholder2,
             buttonText} = props;
 
     const [formInputs, setFormInputs] = useState({
@@ -41,8 +41,8 @@ const Form = (props) => {
                 <form onSubmit={addingNewTransaction}>
                     <label>{label1text}</label>
                     <br />
-                    <input  type={input1type}
-                            className={`form-input1 ${input1class}`}
+                    <input  type="text"
+                            className={`form-input1`}
                             placeholder={placeholder1}
                             value={formInputs.input1}
                             onChange={onInput1Change}
@@ -52,12 +52,12 @@ const Form = (props) => {
                     
                     <label >{label2text}</label>
                     <br />
-                    <input  type={input2type}
-                            className={`form-input2 ${input2class}`}
+                    <input  type="number"
+                            className={`form-input2`}
                             placeholder={placeholder2}
                             value={formInputs.input2} 
                             onChange={onInput2Change}
-                            step={input2step}
+                            step="0.01"
                             required
                     />
                     <br />
